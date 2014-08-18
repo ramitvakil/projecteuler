@@ -1,0 +1,22 @@
+import java.math.BigInteger;
+
+
+public class Q025 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		BigInteger a = BigInteger.ONE;
+		BigInteger b = BigInteger.ONE;
+		BigInteger c = a.add(b);
+		Integer count = 3;
+		while(c.toString().length()<1000){
+			a=b;
+			b=c;
+			c=a.add(b);			
+			count++;
+		}
+		System.out.println(count);
+	}
+
+}
