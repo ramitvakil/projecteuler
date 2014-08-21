@@ -1,0 +1,45 @@
+/**
+ * 
+ */
+package practise;
+
+import java.util.ArrayList;
+import java.util.List;
+
+/**
+ * @author RV
+ *
+ */
+public class Q026 {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+	Integer s = 0;
+	Integer q = 0;
+		for(int i=1;i<1000;i++){
+			Integer p = recurring(i);
+			if(p>s){
+				q=i;
+				s=p;
+				
+			}
+		}
+		System.out.println(q);
+		
+		
+	}
+
+	private static Integer recurring(int n) {
+		List<Integer> sp = new ArrayList<Integer>();
+		int r =1;
+		int counter=0;
+			while(!sp.contains(r)){
+				sp.add(r);
+				r = r*10 % n;
+				counter++;
+				};
+			return counter;		
+	}
+}
