@@ -1,0 +1,47 @@
+/**
+ * 
+ */
+package practise;
+
+/**
+ * @author RV
+ *
+ */
+public class Q030 {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		int answer = 0;
+		 
+		for(int i = 10; i < 9999999; i++) {
+		   int[] digits = numberToDigits(i);
+		 
+		   long sum = 0;
+		   for(int j = 0; j < digits.length; j++) {
+		      sum += Math.pow(digits[j], 5);
+		      //too high, move to next number;
+		      if(sum > i) {
+		         break;
+		      }
+		   }
+		   if(sum == i) {
+		      answer += sum;
+		   }
+		}
+		 
+		System.out.println(answer);
+
+	}
+
+	private static int[] numberToDigits(int i) {
+		String s = String.valueOf(i);
+		int abc[] = new  int[s.length()];
+		for(int j=0;j<s.length();j++){
+			abc[j]= s.charAt(j)-'0';
+		}
+		return abc;
+	}
+
+}
