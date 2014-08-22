@@ -1,0 +1,29 @@
+/**
+ * 
+ */
+package practise;
+
+import java.math.BigInteger;
+import java.util.HashSet;
+import java.util.Set;
+
+/**
+ * @author RV
+ *
+ */
+public class Q029 {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		Set<BigInteger> distinct = new HashSet<BigInteger>();
+		for(int a =2; a<101;a++){
+			for(int b=2;b<101;b++){
+				BigInteger q = BigInteger.valueOf(a).pow(b);
+				distinct.add(q);
+			}		
+		}
+	}
+
+}
