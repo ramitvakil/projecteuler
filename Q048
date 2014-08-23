@@ -1,0 +1,37 @@
+import java.math.BigInteger;
+
+/**
+ * 
+ */
+
+/**
+ * @author RV
+ *
+ */
+public class Q048 {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		BigInteger selfPowerSum = selfPower();
+		String s = selfPowerSum.toString();
+		String q  = s.substring(s.length()-10, s.length());
+		System.out.println(q);
+
+	}
+
+	private static BigInteger selfPower() {
+		// TODO Auto-generated method stub
+		BigInteger s = BigInteger.ONE;
+		for(int a = 2;a<1001;a++){
+			BigInteger q = BigInteger.valueOf(a).pow(a);
+			s = s.add(q);
+		}
+		return s;
+	}
+	
+	
+
+}
