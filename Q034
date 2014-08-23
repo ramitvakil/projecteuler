@@ -1,0 +1,55 @@
+
+/**
+ * 
+ */
+
+/**
+ * @author abc
+ *
+ */
+public class Q034 {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		long sum =0;
+		int count = 0;
+		for(int i=10;i<99999999;i++){
+			boolean b = isCurious(i);
+			if(b){
+				count++;
+				sum = sum + i;
+			}
+		}
+		System.out.println(sum);
+		System.out.println(count);
+
+	}
+	
+	private static boolean isCurious(int i){
+		String s =String.valueOf(i);
+		Integer sum =0;
+		for(int j=0;j<s.length();j++) {
+			int q = s.charAt(j)-'0';
+			sum = sum + factorial(q);
+		}
+		if(sum == i){
+			return true;
+		}else{
+			return false;
+		}
+		
+		
+	}
+
+	private static Integer factorial(int q) {
+		int p = 1;
+		for(int j =1;j<=q;j++){
+			p = p*j;
+		}
+		return p;
+	}
+
+}
