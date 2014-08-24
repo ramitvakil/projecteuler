@@ -1,0 +1,60 @@
+import java.util.HashSet;
+import java.util.Set;
+
+/**
+ * 
+ */
+
+/**
+ * @author RV
+ * 
+ */
+public class Q035 {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		Set<Integer> primes = new HashSet<Integer>();
+		for (int i = 2; i < LIMIT; i++) {
+			if (isPrime(i)) {
+				primes.add(i);
+			}
+		}
+		int count = 0;
+		for (Integer j : primes) {
+			if (isCircular(j, primes)) {
+				count++;
+			}
+		}
+		System.out.println(count);
+	}
+
+	private static boolean isCircular(Integer j, Set<Integer> primes) {
+		String s = Integer.toString(j);
+		for (int i = 1; i < s.length(); i++) {
+			char q = s.charAt(0);
+			s = s.substring(1) + String.valueOf(q);
+			if (!primes.contains(Integer.parseInt(s))) {
+				return false;
+			}
+		}
+		return true;
+	}
+
+	private static final int LIMIT = 1000000;
+
+	public static boolean isPrime(int x) {
+		if (x == 2)
+			return true;
+		else {
+			if (x % 2 == 0)
+				return false;
+			for (int i = 3, end = (int) Math.sqrt(x); i <= end; i += 2) {
+				if (x % i == 0)
+					return false;
+			}
+			return true;
+		}
+	}
+}
