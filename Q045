@@ -1,0 +1,43 @@
+/**
+ * 
+ */
+
+/**
+ * @author RV
+ * 
+ */
+public class Q045 {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		// long start = 40755;
+		// 286 166 144
+		long result = 0;
+		int i = 143;
+
+		while (true) {
+			i++;
+			result = i * (2 * i - 1);
+
+			if (isPentagonal(result)) {
+				break;
+			}
+		}
+		System.out.println(result);
+	}
+
+	private static boolean isPentagonal(long n) {
+		long i = 166L;
+		while (true) {
+			long p = i * (i * 3 - 1) / 2;
+			if (p == n) {
+				return true;
+			}
+			i++;
+			if (p > n)
+				return false;
+		}
+	}
+}
