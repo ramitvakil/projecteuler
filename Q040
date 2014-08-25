@@ -1,0 +1,29 @@
+/**
+ * 
+ */
+package practise;
+
+/**
+ * @author RV
+ *
+ */
+public class Q040 {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		StringBuilder sb = new StringBuilder();
+		for (int i = 1; i < 1000000; i++){
+			sb.append(i);
+		}
+		int prod = 1;
+		for (double i = 0; i <= 6; i++){
+			int d =  sb.charAt((int) Math.pow(10, i)-1)-'0';
+			prod = (int) (prod * (d));
+		}
+		System.out.println(prod);
+
+	}
+
+}
